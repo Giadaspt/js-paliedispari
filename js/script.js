@@ -7,8 +7,6 @@
 const parolaUtente = prompt('Scrivi una parola');
 
 let palindrome = palidromeWord(parolaUtente);
-// let outPut = document.getElementById('output');
-// outPut.innerHTML = 'La parola è palindroma';
 
 // palindrome.innerHTML = 'La parola è palindroma';
 
