@@ -13,15 +13,18 @@ let palindrome = palidromeWord(parolaUtente);
 
 function palidromeWord (str) {
 
-  if ( str == str.split('').reverse().join('')) {
-    str = true;
-    console.log(str);
-  } else {
-    str = false;
-    console.log(str);
-  }
+  let bool = false;
 
-  return str;
+  if (str == str.split('').reverse().join('')) {
+    console.log(str);
+    bool = true;
+  } else {
+    console.log(str);
+    bool = false;
+  }
+  console.log(bool);
+
+  return bool;
 }
 
 
