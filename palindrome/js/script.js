@@ -9,7 +9,7 @@ const parolaUtente = prompt('Scrivi una parola');
 let palindrome = palidromeWord(parolaUtente);
  
 
-// palindrome.innerHTML = 'La parola è palindroma';
+palindrome.innerHTML = 'La parola è palindroma';
 
 function palidromeWord (str) {
 
@@ -26,5 +26,6 @@ function palidromeWord (str) {
 
   return bool;
 }
+
 
 
