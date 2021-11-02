@@ -10,36 +10,61 @@ Dichiariamo chi ha vinto.
 
 
 let evenOddUser = prompt('scegli pari o dispari');
-let numberUser = prompt('scegli un numero da 1 a 5');
+let numberUser;
+let output = document.getElementById('output');
 
 let pc = getRandomNumber (1, 5);
-console.log('questo è il pc', pc);
-
-let risultato = sumRandomNumber(numberUser, pc);
-console.log('questo è la somma', risultato );
+console.log('il pc', pc);
 
 const pari = 'pari';
 const dispari = 'dispari';
 
-// let numeroScelto = evenAndOdd (numberUser);
-if ((numberUser <= 5) && (numberUser !== 0)) {
-  console.log("sono il numero scelto dall'utente", numberUser);
-} else {
-  alert('Inserisci un numero tra 1 e 5');
-  prompt('scegli un numero da 1 a 5');
+if ((evenOddUser !== pari) && (evenOddUser !== dispari)) {
+  evenOddUser;
 }
 
+// if ((numberUser <= 5) && (numberUser !== 0)) {
+//   console.log("numero scelto dall'utente", numberUser);
+// } else if ((numberUser > 5) && (numberUser === 0)) {
+//   prompt('scegli un numero da 1 a 5');
+// }
+
+do {
+  
+  if ((numberUser <= 5) && (numberUser !== 0)) {
+    console.log("numero scelto dall'utente", numberUser);
+  } else if ((numberUser > 5) || (numberUser === 0)) {
+    alert('il numero scelto deve essere tra 1 e 5');
+  }
+
+  numberUser= parseInt(prompt('scegli un numero da 1 a 5'))  ;
+  console.log("numero scelto dall'utente", numberUser);
+}
+while(numberUser > 5){
+}
+
+let risultato = sumRandomNumber(numberUser, pc);
+console.log('somma', risultato );
+
 if ((evenOddUser === pari) && (risultato % 2 == 0) ) {
+  output.innerHTML = `
+  Bravo utente hai vinto! Il pc ha tirato ${pc}, tui hai tirato ${numberUser} e la somma è ${risultato} che è pari
+  `;
   console.log('Bravo utente hai vinto');
 } else if ((evenOddUser === dispari) && (risultato % 2 == 1) ) {
+  output.innerHTML = `
+  Bravo utente hai vinto! Il pc ha tirato ${pc}, tui hai tirato ${numberUser} e la somma è ${risultato} che è dispari
+  `;
   console.log('Bravo utente hai vinto');
 } else {
+  output.innerHTML = `
+  Ha vinto il pc! Tu hai tirato ${numberUser}, il pc ha tirato ${pc}, avevi scelto ${evenOddUser} e la somma è ${risultato}
+  `;
   console.log('ha vinto il pc');
 }
 
 
 function getRandomNumber(min, max) {
-
   let random = Math.floor(Math.random() * (max - min +1) + min);
   return random;
 }
